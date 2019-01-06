@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Show</title>
+</head>
+<body>
+
+     <div class="row">
+        <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <p>Description: <%= @todo.description %></p>
+            <p>Completed:<%= @todo.completed %></p>
+            <p>Creation:<%= time_ago_in_words @todo.created_at %></p>
+             <%= link_to 'Edit', edit_todos_path(@todo), class: "btn btn-warning btn-sm" %> <%= link_to 'Back', todos_home_path, class: "btn btn-info btn-sm" %>
+        </div>
+      </div>
+
+      
+    
+</body>
+</html>

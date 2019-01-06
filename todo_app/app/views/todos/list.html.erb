@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List</title>
+</head>
+<body>
+    
+    <div class="container">
+  <div class="row">
+    <div class="col order-last">
+   <h1> Lista de completados </h1>
+
+     <table class="table  table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Completed</th>
+        <th> -  </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @todos.each do |todo| %>
+        <tr>
+          <td><%= todo.description %></td>
+          <td> <%= check_box_tag 'completed_todo', 'yes', todo.completed  %> </td>
+          
+          
+        </tr>
+      <% end %>
+
+      
+    </tbody>
+  </table>
+    </div>
+    <div class="col">
+     
+    </div>
+    <div class="col order-first">
+    
+    <h1> Lista de No completados </h1>
+    <table class="table  table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Completed</th>
+        <th> -  </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @todos.each do |todo| %>
+        <tr>
+          <td><%= todo.description %></td>
+          <td> <%= check_box_tag 'completed_todo', 'yes', todo.completed  %> </td>
+          
+          
+        </tr>
+      <% end %>
+
+      
+    </tbody>
+  </table>
+    </div>
+  </div>
+</div>
+
+    
+</body>
+</html>

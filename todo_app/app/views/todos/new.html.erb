@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New</title>
+</head>
+<body>
+    
+<h1>New</h1>
+
+
+<%= form_with model: @todo, local: true  do |form| %>
+
+<div class="field">
+ <table>
+  <tr>
+   <td> <%= form.label :description %> </td>
+   <td> <%=form.text_area :description %></td>
+</tr>
+<tr>
+   <td> <%= form.label :completed %> </td>
+   <td> <%=form.check_box :completed %></td>
+   </tr>
+ 
+
+ </table>
+
+ </div>
+
+<% if @todo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+
+      <ul>
+      <% @todo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="actions">
+    <%= form.submit %>
+</div>
+<% end %>
+    
+</body>
+</html>
